@@ -4,12 +4,13 @@ const taskList = [];
 
 const Main = ()=>{  
 
-const {newTask, setNewTask} = useState(taskList);
-const {addTask, setAddTask} = useState({ text: "" })
+const [newTask, setNewTask] = useState(taskList);
+const [addTask, setAddTask] = useState({ text: "" })
 
  const handlerSubmit = (e) => {
     e.preventDefault();
-    setNewTask = ([addTask, ...newTask]);
+    setNewTask([addTask, ...newTask]);  
+
   };
 
   const updateTask = (e) =>{
@@ -31,7 +32,7 @@ const {addTask, setAddTask} = useState({ text: "" })
       <form action="#" onSubmit={ handlerSubmit }>
         <div className="input-group mb-3 mt-5">
           <input type="text" className="form-control" placeholder="Inserire la nuova Task" value={addTask.text} onChange={updateTask} />
-          <button className="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+          <button className="btn btn-outline-secondary" type="button" id="button-addon2">Aggiungi</button>
         </div>
       </form> 
       <div className="container">
