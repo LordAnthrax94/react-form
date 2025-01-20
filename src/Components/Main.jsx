@@ -9,8 +9,7 @@ const [addTask, setAddTask] = useState({ text: "" })
 
  const handlerSubmit = (e) => {
     e.preventDefault();
-    setNewTask([addTask, ...newTask]);  
-
+    setNewTask([addTask, ...newTask]);
   };
 
   const updateTask = (e) =>{
@@ -36,8 +35,8 @@ const [addTask, setAddTask] = useState({ text: "" })
         </div>
       </form> 
       <div className="container">
-        <ul class="list-group">
-          {newTask.map((task) => (<li key={task.id}>{task.text} <i class="fa-solid fa-trash" onClick={() => handlerRemove(task.id)}></i></li>))}
+        <ul className="list-group">
+          {newTask.map((task) => (<li key={task.id}>{task.text} <i className="fa-solid fa-trash" onClick={() => handlerRemove(task.id)}></i></li>))}
                   
         </ul>
       </div>     
